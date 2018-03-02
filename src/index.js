@@ -2,7 +2,7 @@ const express = require("express");
 const { isUnix, isNatural, toNatural, toUnix } = require("./time");
 const app = express();
 
-app.get("/", (req, res) => res.send("Hello dude!"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/view/index.html"));
 
 app.get("/:timestamp", (req, res) => {
   const { timestamp } = req.params;
